@@ -11,21 +11,22 @@ int main() {
         printf("4. Division\n");
         printf("5. Modulus\n");
         printf("6. Power\n");
-        printf("7.Quadratic equation\n");
-        printf("8.Square root\n");
-        printf("9. Cubic\n");
-        printf("10. ln\n");
-        printf("11. Log base 10(log10)\n");
-        printf("12. Exit\n");
-        printf("Choose an operation (1-12): ");
+        printf("7. Percentage\n");
+        printf("8.Quadratic equation\n");
+        printf("9.Square root\n");
+        printf("10. Cubic\n");
+        printf("11. ln\n");
+        printf("12. Log base 10(log10)\n");
+        printf("13. Exit\n");
+        printf("Choose an operation (1-13): ");
         scanf("%d", &choice);
 
-        if (choice == 12) {
+        if (choice == 13) {
             printf("Exiting calculator. Goodbye!\n");
             break;
         }
 
-        if (choice >= 1 && choice <= 6) {
+        if (choice >= 1 && choice <= 7) {
             printf("Enter first number: ");
             scanf("%lf", &a);
             printf("Enter second number: ");
@@ -60,8 +61,11 @@ int main() {
                 case 6:
                     printf("Result: %.2lf ^ %.2lf = %.2lf\n", a, b, pow(a, b));
                     break;
+                case 7:
+                    printf("Result: %.2lf",(a/100)*b);
+                    break;
         }
-}                else if (choice == 7){
+}                else if (choice == 8){
                     //Quadratic equation
                     double a,b,c, discriminant, root1, root2,realPart,imagPart;
                     printf("Quadratic equation: ax^2+bx+c=0\n");
@@ -81,7 +85,7 @@ int main() {
                          printf("complex roots: %.2lf + %.2lfi and %.2lf-%.2lfi\n",realPart,imagPart,realPart,imagPart);
                     }
                 }
-                else if (choice == 8){
+                else if (choice == 9){
                     //Square root
                      printf("Enter a number:");
                      scanf("%lf",&a);
@@ -93,13 +97,13 @@ int main() {
                     printf("result:sqrt(%.2lf)=%.2lfi\n",a,sqrt(a));
                         }
                 }
-                else if (choice==9){
+                else if (choice==10){
                     double a;
                     printf("Enter a number:");
                     scanf("%lf",&a);
                     printf("%.2lf cubed = %.2lf\n", a, a*a*a);
                 }
-                else if (choice==10){
+                else if (choice==11){
                     printf("Enter a number:");
                     scanf("%lf",&a);
                     if(a>0){
@@ -108,7 +112,7 @@ int main() {
                     printf("Natural log is undefined for zero and negative numbers.\n");
                     }
                 }
-                else if (choice==11){
+                else if (choice==12){
                     printf("Enter a number:");
                     scanf("%lf",&a);
                     if (a>0){

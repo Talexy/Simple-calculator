@@ -19,7 +19,11 @@ int main() {
         printf("12. Log base 10(log10)\n");
         printf("13. Exit\n");
         printf("Choose an operation (1-13): ");
-        scanf("%d", &choice);
+        if (scanf("%d", &choice) != 1){
+            printf("Invalid input!Please input a number between 1-13.\n");
+            while (getchar() != '\n');
+            continue;
+        }
 
         if (choice == 13) {
             printf("Exiting calculator. Goodbye!\n");
@@ -28,9 +32,17 @@ int main() {
 
         if (choice >= 1 && choice <= 7) {
             printf("Enter first number: ");
-            scanf("%lf", &a);
+          if (scanf("%lf", &a) != 1){
+             printf("Invalid input!Please input a number.\n");
+             while(getchar() != '\n');
+             continue;
+            }
             printf("Enter second number: ");
-            scanf("%lf", &b);
+             if (scanf("%lf", &b) != 1){
+                printf("Invalid input!Please input a number.\n");
+                while(getchar() != '\n');
+                continue;
+             }
             switch (choice) {
                 case 1:
                     printf("Result: %.2lf + %.2lf = %.2lf\n", a, b, a + b);
@@ -70,7 +82,11 @@ int main() {
                     double a,b,c, discriminant, root1, root2,realPart,imagPart;
                     printf("Quadratic equation: ax^2+bx+c=0\n");
                     printf("Enter coefficients a,b,c:");
-                    scanf("%lf %lf %lf", &a, &b, &c);
+                   if (scanf("%lf %lf %lf", &a, &b, &c) != 1){
+                      printf("Invalid input!Please input a number.\n");
+                      while(getchar() != '\n');
+                      continue;
+                   }
                     discriminant = b*b - 4*a*c;
                     if (discriminant >0){
                         root1=(-b+sqrt(discriminant))/(2*a);
@@ -88,7 +104,11 @@ int main() {
                 else if (choice == 9){
                     //Square root
                      printf("Enter a number:");
-                     scanf("%lf",&a);
+                    if (scanf("%lf",&a)!= 1){
+                        printf("Invalid input!Please input a number.\n");
+                        while (getchar() != '\n');
+                        continue;
+                    }
                     if (a<0){
                     printf("square root of number is not real.\n");
                     printf("result:sqrt(%.2lf)=%.2lfi\n",a,sqrt(-a));
@@ -100,12 +120,20 @@ int main() {
                 else if (choice==10){
                     double a;
                     printf("Enter a number:");
-                    scanf("%lf",&a);
+                   if (scanf("%lf",&a) != 1){
+                    printf("Invalid input!Please input a number.\n");
+                        while (getchar()!= '\n');
+                        continue;
+                   }
                     printf("%.2lf cubed = %.2lf\n", a, a*a*a);
                 }
                 else if (choice==11){
                     printf("Enter a number:");
-                    scanf("%lf",&a);
+                if (scanf("%lf",&a) != 1){
+                    printf("Invalid input!Please input a number.\n");
+                    while(getchar()!= '\n');
+                    continue;
+                }
                     if(a>0){
                         printf("ln(%.2lf)=%.2lf\n",a,log(a));
                     }else{
@@ -114,9 +142,13 @@ int main() {
                 }
                 else if (choice==12){
                     printf("Enter a number:");
-                    scanf("%lf",&a);
+                   if (scanf("%lf",&a)!= 1){
+                    printf("Invalid input!Please input a number.\n");
+                    while(getchar()!= '\n');
+                    continue;
+                   }
                     if (a>0){
-                        printf("log10(%.2lf)= %.2lf\n",a,log10(a));
+                        printf("log10(%.lf)= %.2lf\n",a,log10(a));
                     }else{
                     printf("log base 10 is undefined for zero and negative numbers.\n");
                     }
